@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Baldogo Gerome | Portfolio</title>
+  <link rel="icon" href="logo copy.png"/>
+  <link rel="stylesheet" href="../style.css">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.5/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-pF+FjArfs7U+Zd7h5+jqzJ3OUQ6XB1KnPZuhk8+J...==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+      <!-- Add Animate on Scroll Library -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="sample.js"></script>
+<!-- Initialize AOS -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    AOS.init({
+      duration: 1000,
+      once: false
+    });
+  });
+</script>
+<style>
+  html {
+    scroll-behavior: smooth;
+    cursor: none;
+  }
+  body {
+  background: linear-gradient(to bottom right, #000000, #0f172a, #1e293b); /* deep dark blues */
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #e0f7ff;
+  cursor: none;
+  }
+  .highlight {
+  background: linear-gradient(to right, #68d9ff, #00bfff, #409eff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; /* for Firefox */
+
+  }
+  .primary-bg {
+    background-color: #00bfff;
+  }
+  .light-blue {
+    color: #a5f3fc;
+  }
+
+  /* Glow for Button */
+  @keyframes glow-btn {
+    0%, 100% {
+      box-shadow: 0 0 8px #3b82f6, 0 0 10px #3b82f6;
+    }
+    50% {
+      box-shadow: 0 0 16px #3b82f6, 0 0 5px #3b82f6;
+    }
+  }
+  .glow-btn {
+    animation: glow-btn 2s infinite ease-in-out;
+  }
+  .glow-btn:hover {
+    background: linear-gradient(135deg, #3b82f6, #60a5fa, #93c5fd); /* gradient blue shades */
+    box-shadow: 0 0 20px #3b82f6, 0 0 40px #2563eb, 0 0 60px #1d4ed8;
+    transition: all 0.3s ease-in-out;
+    color:black;
+}
+
+  /* Glow for Image */
+  @keyframes glow-img {
+    0%, 100% {
+      box-shadow: 0 0 150px #3b82f6, 0 0 90px rgb(255, 255, 255);
+    }
+    50% {
+      box-shadow: 0 0 150px #3b82f6, 0 0 90px #ffffff;
+    }
+  }
+  .glow-img {
+    animation: glow-img 2s infinite ease-in-out;
+  }
+
+  .custom-cursor {
+    position: fixed;
+    cursor: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #3b82f6;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.15s ease-out;
+    box-shadow: 0 0 10px #3b82f6, 0 0 20px #3b82f6;
+}
+.custom-cursor.hover {
+  transform: scale(1);
+  background-color: #083e94;
+}
+.menu-link {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 4px;
+  color: #80cefc; /* Tailwind's blue-400 */
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+.menu-link::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background: linear-gradient(to right, #68d9ff, #00bfff, #409eff); /* Tailwind's blue-400 */
+  transition: width 0.3s ease;
+}
+.menu-link:hover {
+  color: #ffffff;
+}
+.menu-link:hover::before {
+  width: 100%;
+}
+.glow-img {
+  animation: glow-img 2s infinite ease-in-out;
+  box-shadow: 0 0 80px #3b82f6, 0 0 40px #1e3a8a;
+}
+.about-section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 1.5rem;
+}
+
+.about-container {
+  max-width: 72rem; /* max-w-6xl */
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .about-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.about-image-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.about-image {
+  width: 16rem;
+  height: 16rem;
+  border-radius: 9999px;
+  object-fit: cover;
+  border: 4px solid #e4e5e7; /* border-blue-500 */
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.4);
+  animation: glow-img 2s infinite ease-in-out;
+}
+
+@media (min-width: 768px) {
+  .about-image {
+    width: 20rem;
+    height: 20rem;
+  }
+}
+
+.about-card {
+  background-color: #1f2937; /* bg-gray-900 */
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
+  border: 1px solid #3b82f6;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.about-card:hover {
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+}
+
+.about-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #6aa4eb; /* light blue */
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  animation: typing 2.5s steps(10, end) forwards;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 8ch } /* Adjust depending on text length */
+}
+
+
+@media (min-width: 768px) {
+  .about-title {
+    font-size: 3rem;
+  }
+}
+
+.about-text {
+  color: #a5f3fc;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+/* Glow animation */
+@keyframes glow-img {
+  0%, 100% {
+    box-shadow: 0 0 150px #ffffff, 0 0 90px #ffffff;
+  }
+  50% {
+    box-shadow: 0 0 150px #3b82f6, 0 0 90px #3b82f6;
+  }
+}
+@keyframes grow {
+  from { width: 0; opacity: 0.3; }
+  to { opacity: 1; }
+}
+.animate-grow {
+  animation: grow 1.5s ease-out forwards;
+}
+</style>
+
+</head>
+<body class="font-sans text-white">
+
+  <div id="customCursor" class="custom-cursor"> 
+  </div>
+  <!-- Navbar -->
+<nav class="w-full fixed top-0 left-0 z-50 bg-black shadow-md "data-aos="fade-down">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <!--Left: Logo + Brand Name -->
+    <div class="flex items-center space-x-2">
+      <img src="logo.png" alt="Logo" class="w-8 h-8 rounded-full">
+     <a href="#hero"><h1 class="text-2xl font-bold highlight">RomeWare</h1></a>
+    </div>
+    <!-- Mobile Menu Button -->
+    <div class="md:hidden">
+      <button id="menu-btn" class="text-blue-400 text-2xl focus:outline-none">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+    <!-- Desktop Menu -->
+    <ul id="menu" class="hidden md:flex space-x-6 font-medium">
+      <li><a href="#hero" class="menu-link mx-2">Home</a></li>
+      <li><a href="#about" class="menu-link mx-2">About Me</a></li>
+      <li><a href="#skills" class="menu-link mx-2">Skills</a></li>
+      <li><a href="#projects" class="menu-link mx-2">Projects</a></li>
+      <li><a href="#experience" class="menu-link mx-2">Experience</a></li>
+      <li><a href="#contact" class="menu-link mx-2">Contact</a></li>
+    </ul>
+  </div>
+<ul id="mobile-menu" class="md:hidden hidden flex-col bg-black text-blue-400 font-medium py-4 backdrop-blur-sm w-full">
+  <li class="w-full border-b border-blue-500 hover:bg-white hover:text-black transition duration-300">
+    <a href="#hero" class="block px-6 py-3 w-full text-left">Home</a>
+  </li>
+  <li class="w-full border-b border-blue-500 hover:bg-white hover:text-black transition duration-300">
+    <a href="#about" class="block px-6 py-3 w-full text-left">About</a>
+  </li>
+  <li class="w-full border-b border-blue-500 hover:bg-white hover:text-black transition duration-300">
+    <a href="#skills" class="block px-6 py-3 w-full text-left">Skills</a>
+  </li>
+  <li class="w-full border-b border-blue-500 hover:bg-white hover:text-black transition duration-300">
+    <a href="#projects" class="block px-6 py-3 w-full text-left">Projects</a>
+  </li>
+  <li class="w-full border-b border-blue-500 hover:bg-white hover:text-black transition duration-300">
+    <a href="#experience" class="block px-6 py-3 w-full text-left">Experience</a>
+  </li>
+  <li class="w-full hover:bg-white hover:text-black transition duration-300">
+    <a href="#contact" class="block px-6 py-3 w-full text-left">Contact</a>
+  </li>
+</ul>
+
+
+</nav>
+
+  <!-- Hero Section -->
+<section id="hero" class="mt-24 md:mt-0 min-h-screen flex flex-col md:flex-row justify-between items-center px-6 pt-6 max-w-7xl mx-auto" data-aos="fade-up">
+
+  <!-- Left Side: Text -->
+  <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
+    <h1 class="text-5xl md:text-7xl font-extrabold mb-6">
+    <span id="intro-heading" class="highlight"></span>
+    </h1>
+    <p class="text-xl md:text-xl light-blue mb-8">
+      <span id="intro-subtext"></span>
+    </p>
+
+   <div class="flex justify-center md:justify-start gap-4 mb-8 text-blue-400 text-xl">
+
+      <a href="https://github.com/geromebal" aria-label="GitHub"
+        class="relative group w-9 h-9 flex items-center justify-center rounded-full border border-blue-400 
+              hover:text-white hover:bg-blue-500/20 transition-all transform hover:-translate-y-1 hover:scale-110 duration-300">
+        <span class="absolute inset-0 rounded-full bg-blue-400 opacity-0 group-hover:opacity-20 blur-lg scale-150 transition duration-500"></span>
+        <i class="fab fa-github relative z-10"></i>
+      </a>
+
+      <a href="https://www.facebook.com/gerome.baldogo.2024" aria-label="Facebook"
+        class="relative group w-9 h-9 flex items-center justify-center rounded-full border border-blue-400 
+              hover:text-white hover:bg-blue-500/20 transition-all transform hover:-translate-y-1 hover:scale-110 duration-300">
+        <span class="absolute inset-0 rounded-full bg-blue-400 opacity-0 group-hover:opacity-20 blur-lg scale-150 transition duration-500"></span>
+        <i class="fab fa-facebook relative z-10"></i>
+      </a>
+
+      <a href="https://mail.google.com/mail/u/0/#inbox" aria-label="Gmail"
+        class="relative group w-9 h-9 flex items-center justify-center rounded-full border border-blue-400 
+              hover:text-white hover:bg-blue-500/20 transition-all transform hover:-translate-y-1 hover:scale-110 duration-300">
+        <span class="absolute inset-0 rounded-full bg-blue-500 opacity-0 group-hover:opacity-20 blur-lg scale-150 transition duration-500"></span>
+        <i class="fas fa-envelope relative z-10"></i>
+      </a>
+
+      <a href="https://www.linkedin.com/in/gerome-baldogo-a8b225349/" aria-label="LinkedIn"
+        class="relative group w-9 h-9 flex items-center justify-center rounded-full border border-blue-400 
+              hover:text-white hover:bg-blue-500/20 transition-all transform hover:-translate-y-1 hover:scale-110 duration-300">
+        <span class="absolute inset-0 rounded-full bg-blue-400 opacity-0 group-hover:opacity-20 blur-lg scale-150 transition duration-500"></span>
+        <i class="fab fa-linkedin-in relative z-10"></i>
+      </a>
+  </div>
+
+   <a href="#projects"
+    class="glow-btn bg-white/10 backdrop-blur-md border border-blue-400 text-blue-200 
+            hover:bg-blue-500/20 hover:text-white 
+            font-semibold py-3 px-8 rounded-full 
+            transition duration-300 
+            shadow-lg shadow-blue-400/20 hover:shadow-blue-500/60 hover:shadow-2xl">
+    View My Work
+  </a>
+  </div>
+  <!-- Right Side: Profile Image -->
+  <div class="md:w-1/2 flex justify-center">
+  <img src="profile.jpg" 
+     alt="Profile Image" 
+     class="w-64 h-64 md:w-80 md:h-80 object-cover rounded-full border-4 border-sky-400 
+            shadow-lg shadow-blue-400/20 hover:shadow-blue-500/60 hover:shadow-2xl 
+            hover:scale-105 transition duration-300 ease-in-out glow-img">
+</div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="about-section" data-aos="fade-up">
+  <div class="about-container">
+    <!-- Left: Circular Image -->
+    <div class="about-image-wrapper">
+      <img src="me.jpg" 
+           alt="Developer" 
+           class="about-image" />
+    </div>
+
+    <!-- Right: About Card -->
+    <div class="about-card">
+      <h2 class="about-title">About Me</h2>
+      <p class="about-text">
+          Hello! My name is Gerome Baldogo, and I’m a passionate and detail-oriented Junior Web Developer with a strong foundation in both front-end and back-end development. I specialize in HTML, CSS, JavaScript, PHP, and MySQL, and I enjoy creating clean, responsive websites and interactive user interfaces.
+
+          I’m constantly learning and exploring new tools, frameworks, and best practices to improve my skills. As a beginner in the tech industry, I’m eager to contribute to meaningful projects, grow in a collaborative environment, and evolve into a well-rounded full-stack developer.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section id="skills" class="py-20 text-white" data-aos="fade-up">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-4xl font-bold mb-10 text-center highlight">Programming Language & Framework Skills</h2>
+
+    <div class="grid md:grid-cols-2 gap-10">
+
+      <!-- HTML -->
+      <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-blue-500/30 transition">
+        <div class="flex items-center mb-4">
+          <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="w-10 h-10 mr-4" alt="HTML" />
+          </a>
+          <h3 class="text-xl font-semibold text-blue-400 flex-1">HTML</h3>
+          <span class="text-white font-medium">90%</span>
+        </div>
+        <div class="w-full bg-gray-700 rounded-full h-3">
+          <div class="bg-blue-500 h-3 rounded-full animate-grow" style="width: 90%; animation-delay: 0.2s;"></div>
+        </div>
+      </div>
+
+      <!-- CSS -->
+      <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-blue-500/30 transition">
+        <div class="flex items-center mb-4">
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" class="w-10 h-10 mr-4" alt="CSS" />
+          </a>
+          <h3 class="text-xl font-semibold text-blue-400 flex-1">CSS</h3>
+          <span class="text-white font-medium">85%</span>
+        </div>
+        <div class="w-full bg-gray-700 rounded-full h-3">
+          <div class="bg-blue-400 h-3 rounded-full animate-grow" style="width: 85%; animation-delay: 0.4s;"></div>
+        </div>
+      </div>
+
+      <!-- JavaScript -->
+      <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-yellow-400/30 transition">
+        <div class="flex items-center mb-4">
+          <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
+            <img src="../img/js.png" class="w-10 h-10 mr-4" alt="JavaScript" />
+          </a>
+          <h3 class="text-xl font-semibold text-yellow-400 flex-1">JavaScript</h3>
+          <span class="text-white font-medium">75%</span>
+        </div>
+        <div class="w-full bg-gray-700 rounded-full h-3">
+          <div class="bg-yellow-400 h-3 rounded-full animate-grow" style="width: 75%; animation-delay: 0.6s;"></div>
+        </div>
+      </div>
+
+      <!-- PHP -->
+      <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-indigo-400/30 transition">
+        <div class="flex items-center mb-4">
+          <a href="https://www.php.net/" target="_blank">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" class="w-10 h-10 mr-4" alt="PHP"/>
+          </a>
+          <h3 class="text-xl font-semibold text-indigo-300 flex-1">PHP</h3>
+          <span class="text-white font-medium">40%</span>
+        </div>
+        <div class="w-full bg-gray-700 rounded-full h-3">
+          <div class="bg-indigo-400 h-3 rounded-full animate-grow" style="width: 40%; animation-delay: 0.8s;"></div>
+        </div>
+      </div>
+
+      <!-- MySQL -->
+      <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-cyan-400/30 transition">
+        <div class="flex items-center mb-4">
+          <a href="https://dev.mysql.com/doc/" target="_blank">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" class="w-10 h-10 mr-4" alt="MySQL" />
+          </a>
+          <h3 class="text-xl font-semibold text-cyan-300 flex-1">MySQL</h3>
+          <span class="text-white font-medium">30%</span>
+        </div>
+        <div class="w-full bg-gray-700 rounded-full h-3">
+          <div class="bg-blue-400 h-3 rounded-full animate-grow" style="width: 30%; animation-delay: 1s;"></div>
+        </div>
+      </div>
+
+      <!-- Bootstrap -->
+      <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-purple-400/30 transition">
+        <div class="flex items-center mb-4">
+          <a href="https://getbootstrap.com/" target="_blank">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" class="w-10 h-10 mr-4" alt="Bootstrap" />
+          </a>
+          <h3 class="text-xl font-semibold text-purple-300 flex-1">Bootstrap</h3>
+          <span class="text-white font-medium">30%</span>
+        </div>
+        <div class="w-full bg-gray-700 rounded-full h-3">
+          <div class="bg-purple-400 h-3 rounded-full animate-grow" style="width: 30%; animation-delay: 1.2s;"></div>
+        </div>
+      </div>
+
+      <!-- Tailwind CSS -->
+      <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-teal-300/30 transition">
+        <div class="flex items-center mb-4">
+          <a href="https://tailwindcss.com/" target="_blank">
+            <img src="../img/tailwind.svg" class="w-10 h-10 mr-4" alt="Tailwind CSS" />
+          </a>
+          <h3 class="text-xl font-semibold text-teal-300 flex-1">Tailwind CSS</h3>
+          <span class="text-white font-medium">30%</span>
+        </div>
+        <div class="w-full bg-gray-700 rounded-full h-3">
+          <div class="bg-blue-300 h-3 rounded-full animate-grow" style="width: 30%; animation-delay: 1.4s;"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <!-- Projects Section -->
+<section id="projects" class="min-h-screen py-20 px-6  from-gray-900 to-black text-white" data-aos="fade-up">
+  <div class="max-w-6xl mx-auto text-center">
+    <h2 class="text-4xl md:text-5xl font-bold mb-16 text-center text-blue-400">Project Previews</h2>
+
+    <div class="flex flex-col md:flex-row items-center justify-center gap-10">
+      <!-- Project Card -->
+      <div class="bg-gray-800 border border-orange-500 rounded-2xl shadow-xl p-6 md:p-8 max-w-3xl w-full hover:shadow-orange-500/40 transition-all duration-300">
+        <h3 class="text-2xl md:text-3xl font-semibold text-blue-400 mb-4">RPHECMPC Website with File Management System</h3>
+        <p class="text-gray-300 mb-6 text-base md:text-lg leading-relaxed">
+          Dynamic admin and user website with announcements, file sharing, login system, and dashboards.
+        </p>
+
+        <div class="relative w-full aspect-video rounded-xl overflow-hidden border border-gray-700 hover:border-blue-400 transition-all duration-300">
+          <iframe src="https://rphecmpc.com/"
+                  class="w-full h-full pointer-events-none"
+                  frameborder="0" loading="lazy"></iframe>
+          <a href="https://rphecmpc.com/" target="_blank"
+             class="absolute inset-0 z-10" aria-label="Open RPHECMPC Website"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Experience Section -->
+<section id="experience" class="py-20 px-6 text-white" data-aos="fade-up">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-4xl md:text-5xl font-bold mb-16 text-center highlight">OJT Experience</h2>
+
+    <div class="space-y-16">
+
+      <!-- Experience Item 1 -->
+      <div class="flex flex-col md:flex-row items-center gap-10">
+        <!-- Image -->
+        <div class="w-full md:w-1/3">
+          <img src="exp1.jpg" alt="OJT Experience"
+               class="rounded-xl shadow-lg hover:scale-105 transform transition duration-300 glow-img" />
+        </div>
+        <!-- Text -->
+        <div class="md:w-2/3">
+          <h3 class="text-2xl font-semibold text-blue-400 mb-2">On-the-Job Training at RPHECMPC</h3>
+          <p class="text-gray-300 text-lg">
+            During my OJT, I contributed to the development of the RPHECMPC website. I worked on front-end interfaces and the back-end functionalities like user login systems, file sharing modules, and announcement management. I also practiced real-world coding workflows, team communication, and web hosting.
+          </p>
+        </div>
+      </div>
+
+      <!-- Experience Item 2 -->
+      <div class="flex flex-col md:flex-row-reverse items-center gap-10">
+        <!-- Image -->
+        <div class="w-full md:w-1/3">
+          <img src="exp2.jpg" alt="Freelance Experience"
+               class="rounded-xl shadow-lg hover:scale-105 transform transition duration-300 glow-img" />
+        </div>
+        <!-- Text -->
+        <div class="md:w-2/3">
+          <h3 class="text-2xl font-semibold text-blue-400 mb-2">Presenting and Deploying Website</h3>
+          <p class="text-gray-300 text-lg">
+            I presenting our project to our manager and her employees. We disscuss about the functionality of our website, we begin at Homepage which has a dynamic page it the admin can control the homepage by adding services, product etc. also in user admin can post announcement, upload file to specific user, ban/unban user and etc. and after presentation our manager decide to post it online through hostinger to have a personal website to their company. 
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Contact Section -->
+<section id="contact" class="py-20 px-6  from-gray-900 via-gray-800 to-black text-white" data-aos="fade-up">
+  <div class="max-w-xl mx-auto text-center">
+    <!-- Section Heading -->
+    <h3 class="text-4xl font-bold mb-4 highlight">Contact Me</h3>
+    <p class="text-gray-400 mb-10 text-lg">If you have any concern, just contact me through Gmail by filling out this contact form.</p>
+
+    <!-- Form Card -->
+    <form action="https://formsubmit.co/geraldbaldogo23@gmail.com" method="POST"
+          class="space-y-6 bg-gradient-to-tr from-gray-900 via-gray-800 to-gray-900 p-10 rounded-3xl shadow-2xl border border-gray-700 max-w-md mx-auto">
+
+      <!-- Hidden Settings -->
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_subject" value="New message from your portfolio">
+      <input type="hidden" name="_template" value="box">
+      <input type="hidden" name="_next" value="http://127.0.0.1:5500/profile/index.html?#contact">
+
+      <!-- Name Field -->
+      <div>
+        <input type="text" name="name" placeholder="Your Name" required
+               class="w-full p-3 bg-gray-900 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-orange-400 transition" />
+      </div>
+
+      <!-- Email Field -->
+      <div>
+        <input type="email" name="email" placeholder="Your Email" required
+               class="w-full p-3 bg-gray-900 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-orange-400 transition" />
+      </div>
+
+      <!-- Message Field -->
+      <div>
+        <textarea name="message" placeholder="Your Message" rows="5" required
+                  class="w-full p-3 bg-gray-900 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-orange-400 transition"></textarea>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit"
+              class="w-full bg-gradient-to-r from-orange-500 to-yellow-400 text-black font-semibold py-3 px-6 rounded-full hover:brightness-110 transition duration-300 shadow-md">
+        Send Message
+      </button>
+    </form>
+  </div>
+</section>
+
+  <!-- Script for mobile menu toggle -->
+  <script>
+    const menuBtn = document.getElementById("menu-btn");
+    const menu = document.getElementById("menu");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+  </script>
+  <script>
+    const headingElement = document.getElementById('intro-heading');
+    const subtextElement = document.getElementById('intro-subtext');
+
+    const headingTexts = ["I'm Gerome Baldogo", "I'm a Junior Web Developer"];
+    const subtext = "I am a passionate and detail-oriented Junior Web Developer with a solid foundation in software development.";
+
+    let headingIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let isHeadingComplete = false;
+    let subCharIndex = 0;
+    let subtextTypedOnce = false; // 👈 NEW FLAG
+
+    function typeHeading() {
+      const currentText = headingTexts[headingIndex];
+      headingElement.textContent = currentText.substring(0, charIndex);
+
+      if (!isDeleting) {
+        if (charIndex < currentText.length) {
+          charIndex++;
+          setTimeout(typeHeading, 100);
+        } else {
+          isHeadingComplete = true;
+
+          // ✅ Only type subtext once
+          if (!subtextTypedOnce) {
+            setTimeout(() => typeSubtext(), 800);
+          }
+
+          setTimeout(() => {
+            isDeleting = true;
+            setTimeout(typeHeading, 3000);
+          }, 4000);
+        }
+      } else {
+        if (charIndex > 0) {
+          charIndex--;
+          headingElement.textContent = currentText.substring(0, charIndex);
+          setTimeout(typeHeading, 50);
+        } else {
+          isDeleting = false;
+          isHeadingComplete = false;
+          headingIndex = (headingIndex + 1) % headingTexts.length;
+          setTimeout(typeHeading, 500);
+        }
+      }
+    }
+
+    function typeSubtext() {
+      if (!isHeadingComplete || subtextTypedOnce) return;
+      if (subCharIndex < subtext.length) {
+        subtextElement.textContent += subtext.charAt(subCharIndex);
+        subCharIndex++;
+        setTimeout(typeSubtext, 50);
+      } else {
+        subtextTypedOnce = true; // ✅ Mark as done
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", typeHeading);
+  </script>
+  <script>
+    const cursor = document.getElementById('customCursor');
+    document.addEventListener('mousemove', e => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    });
+
+    document.querySelectorAll('a, button').forEach(el => {
+    el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+    el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+  });
+
+  </script>
+
+</body>
+</html>
+
+
